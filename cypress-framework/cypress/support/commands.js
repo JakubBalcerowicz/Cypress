@@ -1,5 +1,3 @@
-import HomePage from "./PageObjects/HomePage";
-
 Cypress.Commands.add("login", () => {
   cy.visit("https://app.bluemedia.pl/logowanie");
   cy.get("#email").type("rekrutacja-cypress1@bm.pl");
@@ -35,20 +33,32 @@ Cypress.Commands.add("getIcons", () => {
   return cy.get("ul").children();
 });
 
-Cypress.Commands.add("checkNumberOfTabs", () => {
-  cy.xpath(" //div[@class = 'ng-tns-c99-0 ng-star-inserted']/a").should(
-      "have.length",
-      5
+Cypress.Commands.add("getPanelBar", () => {
+  return cy.xpath(
+    "//div[@class = 'ng-tns-c99-0 ng-star-inserted']/a/parent::div"
   );
-  cy.xpath(
-      "//div[@class = 'ng-tns-c99-0 ng-star-inserted']/a/parent::div"
-  )
-      .children()
-      .then((tabs) => {
-        expect(tabs.length).equal(5);
-      });
 });
 
+Cypress.Commands.add("checkNumberOfTabs", () => {
+  cy.xpath(" //div[@class = 'ng-tns-c99-0 ng-star-inserted']/a").should(
+    "have.length",
+    5
+  );
+  cy.getPanelBar()
+    .children()
+    .then((tabs) => {
+      expect(tabs.length).equal(5);
+    });
+});
 
+Cypress.Commands.add("getTab", (name) => {
+  return cy.xpath(`//div/a[contains(text(), '${name}' )]`);
+});
 
+Cypress.Commands.add("getLoadingsMask", () => {
+  return cy.xpath(`//div[@class = 'loading-mask']`);
+});
 
+Cypress.Commands.add("getContent", () => {
+  return cy.get('*[class^="content-wrapper"]');
+});
