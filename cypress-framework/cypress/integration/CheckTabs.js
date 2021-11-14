@@ -10,7 +10,7 @@ describe("Check tabs", () => {
     { name: " Opłaty automatyczne " },
     { name: " Lista transakcji " },
     { name: " Formy płatności " },
-    { name: " Ustawienia i dane konta ", class: "account-wrapper" },
+    { name: " Ustawienia i dane konta " },
   ];
   it(`Check number of tabs.`, () => {
     cy.checkNumberOfTabs();
