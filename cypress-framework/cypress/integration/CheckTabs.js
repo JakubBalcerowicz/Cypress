@@ -16,7 +16,7 @@ describe("Check tabs", () => {
     cy.checkNumberOfTabs();
   });
   tabs.forEach((tab) => {
-    it(`Check tab [${tab.name}] is on the panel enabled`, () => {
+    it(`Check tab [${tab.name}] is on the panel.`, () => {
       cy.getTab(tab.name).then(($tab) => {
         expect($tab.is(":visible")).equal(true);
       });
