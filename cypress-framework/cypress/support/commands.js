@@ -1,8 +1,8 @@
 Cypress.Commands.add("login", () => {
   cy.visit("https://app.bluemedia.pl/logowanie");
-  cy.get("#email").type("rekrutacja-cypress1@bm.pl");
+  cy.get("#email").type(Cypress.env('login'));
   cy.get(".bm-button").contains("Dalej").click();
-  cy.get("#password").type("Qwerty12");
+  cy.get("#password").type(Cypress.env('password'));
   cy.get(".bm-button").contains("Zaloguj się").click();
 });
 
