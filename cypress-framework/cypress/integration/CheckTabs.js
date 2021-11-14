@@ -26,8 +26,8 @@ describe("Check tabs", () => {
     it(`Go to tab [${tab.name}] and check loading.`, () => {
       cy.getTab(tab.name).click();
       cy.getLoadingsMask().should("be.visible");
-      cy.getContent().should("be.visible");
       cy.getLoadingsMask().should("not.exist");
+      cy.getContent().should("be.visible");
     });
   });
 });
