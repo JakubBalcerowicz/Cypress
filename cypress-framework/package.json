@@ -1,0 +1,23 @@
+{
+  "name": "cypress-framework",
+  "version": "1.0.0",
+  "description": "CypressTask",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "jBIT",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.7.0",
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "cypress-xpath": "^1.6.2"
+  }
+}
