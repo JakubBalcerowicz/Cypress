@@ -1,2 +1,6 @@
-Test 1 path: Cypress/cypress-framework/cypress/integration/CheckIcons.js  
-Test 2 path: Cypress/cypress-framework/cypress/integration/CheckTabs.js  
+
+Scenariusz 1  
+Rozwiązanie: cypress-framework/cypress/integration/CheckIcons.js 
+
+Scenariousz 2  
+Rozwiązanie: Cypress/cypress-framework/cypress/integration/CheckTabs.js  
